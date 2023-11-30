@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>LANDSORT DEEP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.5.1/jscolor.min.js"></script>
+  <script>
+    // These options apply to all color pickers on the page
+    jscolor.presets.default = {
+      width: 300, height: 200,
+      format: 'hex'
+    };
+  </script>
+</head>
+
+<body>
+  <div class="topnav">
+    <h1>LANDSORT DEEP</h1>
+  </div>
+  <div class="content">
+    <div class="card-grid">
+      <div class="card">
+        <p class="card-title"><i class="fas fa-thermometer-threequarters" style="color:#059e8a;"></i> RSSI</p>
+        <p class="reading"><span id="rssi"></span> dBm</p>
+      </div>
+      <div class="card">
+        <p class="card-title">Warm color</p>
+        <p class="reading">
+          <!-- <input class="jscolor {onFineChange:'update(this)'}" id="rgb"> -->
+          <input id="warm" data-jscolor="{ preset: 'dark', closeButton: true, closeText: 'OK', onInput:'wsSend(0, this)' }">
+        </p>
+      </div>
+      <div class="card">
+        <p class="card-title">Cold color</p>
+        <p class="reading">
+          <!-- <input class="jscolor {onFineChange:'update(this)'}" id="rgb"> -->
+          <input id="cold" data-jscolor="{ preset: 'dark', closeButton: true, closeText: 'OK', onInput:'wsSend(1, this)'  }">
+        </p>
+      </div>
+      <div class="card">
+        <p class="reading"><a href="#" onclick="window.open(`http://${window.location.hostname}/`)">Go to WiFi config</a></p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
